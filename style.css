@@ -1,0 +1,98 @@
+@font-face {
+  font-family: Necto Mono;
+  src: url(GT-Maru-Mega.woff2);
+}
+
+body {
+	font-family: Necto Mono;
+	font-size: 32px;
+	line-height: 1.5;
+	background-color: #7a7a7a;
+	color: #333333;
+}
+
+/* WORLD PAN starts*/
+
+section.panner {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section.panner div.world { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 600px);
+  grid-gap: 48px;
+}
+
+@media (max-width: 600px) {  
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  section div.world {
+    grid-gap: 32px;
+  }
+  
+  section img {
+    width: 300px;
+  }
+}
+
+img, iframe {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* World Pan ends, Title/Logo/info texts begin 2 ZINDEX */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: block;
+  justify-content: space-between;
+  mix-blend-mode: multiply;
+  padding: 48px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Title/Logo/info texts end, Toggled Blur container 3 ZINDEX  */
+
+.blur {
+    position: fixed;
+    top:0;
+    left:0;
+    padding: 2vw,2vh;
+    font-size: 1em;
+    line-height: 1em;
+    width: 98vw;
+    height: 98vh;
+    display: inline-block;
+ -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index:2;
+    overflow: hidden;
+}
